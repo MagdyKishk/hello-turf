@@ -34,34 +34,10 @@ const PORT = process.env.PORT || 3000;
 // Middleware Configuration
 // ========================================
 
-// Security middleware
+// Security middleware - Relaxed for CSS/JS to work properly
 app.use(helmet({
-    contentSecurityPolicy: {
-        directives: {
-            defaultSrc: ["'self'"],
-            scriptSrc: [
-                "'self'", 
-                "'unsafe-inline'",
-                "https://cdnjs.cloudflare.com",
-                "https://cdn.jsdelivr.net",
-                "https://fonts.googleapis.com"
-            ],
-            styleSrc: [
-                "'self'", 
-                "'unsafe-inline'",
-                "https://cdnjs.cloudflare.com",
-                "https://cdn.jsdelivr.net",
-                "https://fonts.googleapis.com"
-            ],
-            fontSrc: [
-                "'self'",
-                "https://cdnjs.cloudflare.com",
-                "https://fonts.gstatic.com"
-            ],
-            imgSrc: ["'self'", "data:", "https:"],
-            connectSrc: ["'self'"]
-        }
-    }
+    contentSecurityPolicy: false, // Disable CSP temporarily to test
+    crossOriginEmbedderPolicy: false
 }));
 
 // Compression middleware
@@ -92,8 +68,24 @@ app.use(session({
     }
 }));
 
-// Static files
-app.use(express.static(path.join(__dirname, 'public')));
+// Static files with proper MIME types
+app.use(express.static(path.join(__dirname, 'public'), {
+    setHeaders: (res, filePath) => {
+        if (filePath.endsWith('.css')) {
+            res.setHeader('Content-Type', 'text/css');
+        } else if (filePath.endsWith('.js')) {
+            res.setHeader('Content-Type', 'application/javascript');
+        }
+    }
+}));
+
+// Debug middleware - log all requests (remove in production)
+if (process.env.NODE_ENV === 'development') {
+    app.use((req, res, next) => {
+        console.log(`${req.method} ${req.url}`);
+        next();
+    });
+}
 
 // View engine setup
 app.set('view engine', 'ejs');
