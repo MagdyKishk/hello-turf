@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             try {
                 // Send data to backend
-                const response = await fetch('/quote/submit', {
+                const response = await fetch('./quote/submit', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
