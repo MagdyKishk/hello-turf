@@ -1,0 +1,80 @@
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <img src="/images/logo/hello-turf-dark.png" alt="Hello Turf Logo" class="footer-logo">
+                <p>Austin's premier artificial turf specialists. Transforming outdoor spaces with premium synthetic grass solutions since 2013.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#about">About Us</a></li>
+                    <li><a href="/#services">Our Services</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/#testimonials">Testimonials</a></li>
+                    <li><a href="/contact">Get a Quote</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/services/residential-turf">Residential Turf</a></li>
+                    <li><a href="/services/commercial-turf">Commercial Turf</a></li>
+                    <li><a href="/services/pet-turf">Pet Turf Systems</a></li>
+                    <li><a href="/services/putting-greens">Putting Greens</a></li>
+                    <li><a href="/services/pool-turf">Pool Turf</a></li>
+                    <li><a href="/services/sports-turf">Sports Turf</a></li>
+                    <li><a href="/services/pavers">Pavers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+15123175400">(512) 317-5400</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:hello@hello-turf.com">hello@hello-turf.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Austin, TX & Surrounding Areas</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <%= new Date().getFullYear() %> Hello Turf. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            <p class="footer-credit">Licensed & Insured | ROC #123456</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" class="scroll-top" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<% if (typeof includeSplide !== 'undefined' && includeSplide) { %>
+<!-- Splide JS for Testimonials Slider -->
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<% } %>
+
+<% if (typeof includeHeroAnimation !== 'undefined' && includeHeroAnimation) { %>
+<!-- Hero Animation -->
+<script src="/js/hero-animation.js"></script>
+<% } %>
+
+<!-- JavaScript -->
+<script src="/js/script.js"></script>
+</body>
+</html>
+

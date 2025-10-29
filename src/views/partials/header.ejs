@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="<%= typeof description !== 'undefined' ? description : 'Hello Turf - Austin\'s premier artificial turf installation specialists. Professional synthetic grass for residential, commercial, pet areas, and putting greens.' %>">
+    <meta name="keywords" content="artificial turf Austin, synthetic grass Austin, turf installation Austin TX, artificial grass Austin, pet turf Austin, putting green installation">
+    <meta name="author" content="Hello Turf">
+    
+    <!-- SEO Title -->
+    <title><%= title %></title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo/hello-turf-dark.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <% if (typeof includeSplide !== 'undefined' && includeSplide) { %>
+    <!-- Splide CSS for Testimonials Slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <% } %>
+    
+    <% if (typeof includeP5 !== 'undefined' && includeP5) { %>
+    <!-- p5.js for Hero Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <% } %>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+

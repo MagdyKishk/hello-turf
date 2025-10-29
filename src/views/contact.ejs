@@ -1,0 +1,125 @@
+<%- include('partials/header', {
+    title: title,
+    description: 'Contact Hello Turf for a free quote on artificial turf installation in Austin, TX. Professional service, same-day response, and free consultations.'
+}) %>
+
+<%- include('partials/nav', { currentPage: currentPage }) %>
+
+<!-- Contact & Quote Section -->
+<section id="contact" class="contact-quote-section" style="margin-top: 80px;">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Contact Hello Turf</h2>
+            <p class="section-subtitle">Get Your Free Quote Today</p>
+        </div>
+        
+        <div class="contact-quote-grid">
+            <!-- Quote Form -->
+            <div class="quote-form-container">
+                <div class="form-intro">
+                    <h3>Request Your Free Quote</h3>
+                    <p>Fill out the form below and one of our turf specialists will contact you within 24 hours with a personalized quote.</p>
+                    <div class="quote-benefits-compact">
+                        <div class="benefit-compact">
+                            <i class="fas fa-check"></i>
+                            <span>Free consultation</span>
+                        </div>
+                        <div class="benefit-compact">
+                            <i class="fas fa-check"></i>
+                            <span>No obligation</span>
+                        </div>
+                        <div class="benefit-compact">
+                            <i class="fas fa-check"></i>
+                            <span>Financing available</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <form id="quoteForm" class="contact-quote-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email (Optional)</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Property Address (Optional)</label>
+                        <input type="text" id="address" name="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="projectSize">Approximate Project Size (sq ft)</label>
+                        <input type="text" id="projectSize" name="projectSize" placeholder="e.g., 500 sq ft">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell Us About Your Project</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Share any details about your project, timeline, or specific needs..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Request Free Quote</button>
+                    <p class="form-note">* Required fields. We respect your privacy and will never share your information.</p>
+                </form>
+            </div>
+
+            <!-- Contact Info & Map -->
+            <div class="contact-info-container">
+                <div class="contact-info-card">
+                    <h3>Get In Touch</h3>
+                    <p>Have questions? Our friendly team is here to help. Reach out by phone, email, or visit us during business hours.</p>
+                    
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone</strong>
+                                <a href="tel:+15123175400">(512) 317-5400</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:hello@hello-turf.com">hello@hello-turf.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Service Area</strong>
+                                <p>Austin, TX & Surrounding Areas<br>
+                                Round Rock, Cedar Park, Georgetown,<br>
+                                Pflugerville, Lakeway & More</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Business Hours</strong>
+                                <p>Monday - Friday: 8:00 AM - 6:00 PM<br>
+                                Saturday: 9:00 AM - 4:00 PM<br>
+                                Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>
+

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="<%= service.introParagraph.substring(0, 155) %>">
+    <meta name="keywords" content="<%= service.name.toLowerCase() %> Austin, artificial turf Austin TX">
+    <meta name="author" content="Hello Turf">
+    
+    <!-- SEO Title -->
+    <title><%= title %></title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo/hello-turf-dark.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/nav', { currentPage: currentPage }) %>
+
+    <!-- Service Hero -->
+    <section class="service-hero" style="margin-top: 80px; background: linear-gradient(135deg, rgba(0, 102, 204, 0.9) 0%, rgba(46, 204, 113, 0.8) 100%), url('/images/<%= service.heroImage %>') center/cover;">
+        <div class="container">
+            <div class="service-hero-content">
+                <h1><%= service.heroTitle %></h1>
+                <p><%= service.heroSubtitle %></p>
+                <a href="/contact" class="btn btn-primary">Get Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="service-details">
+        <div class="container">
+            <div class="service-content-grid">
+                <div class="service-main-content">
+                    <h2><%= service.mainHeading %></h2>
+                    <p><%= service.introParagraph %></p>
+                    
+                    <h3><%= service.benefitsTitle %></h3>
+                    <ul class="service-benefits-list">
+                        <% service.benefits.forEach(function(benefit) { %>
+                        <li><i class="fas fa-<%= benefit.icon %>"></i> <strong><%= benefit.title %>:</strong> <%= benefit.description %></li>
+                        <% }); %>
+                    </ul>
+
+                    <h3><%= service.optionsTitle %></h3>
+                    <p><%= service.optionsIntro %></p>
+                    <div class="turf-options">
+                        <% service.options.forEach(function(option) { %>
+                        <div class="option-card">
+                            <h4><%= option.title %></h4>
+                            <p><%= option.description %></p>
+                        </div>
+                        <% }); %>
+                    </div>
+
+                    <h3><%= service.processTitle %></h3>
+                    <ol class="process-list">
+                        <% service.process.forEach(function(step) { %>
+                        <li><strong><%= step.step %>:</strong> <%= step.description %></li>
+                        <% }); %>
+                    </ol>
+
+                    <div class="cta-box">
+                        <h3><%= service.ctaTitle %></h3>
+                        <p><%= service.ctaDescription %></p>
+                        <a href="/contact" class="btn btn-primary"><%= service.ctaButton %></a>
+                    </div>
+                </div>
+
+                <div class="service-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Quick Facts</h3>
+                        <ul class="facts-list">
+                            <li><i class="fas fa-shield-alt"></i> Warranty: Up to 15 years</li>
+                            <li><i class="fas fa-leaf"></i> 100% Lead-free</li>
+                            <li><i class="fas fa-sun"></i> UV Stabilized</li>
+                            <li><i class="fas fa-tint"></i> Excellent Drainage</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card cta-sidebar">
+                        <h3>Get Started Today</h3>
+                        <p>Call us for a free consultation</p>
+                        <a href="tel:+15123175400" class="btn btn-secondary"><i class="fas fa-phone"></i> (512) 317-5400</a>
+                        <a href="/contact" class="btn btn-primary">Request Quote</a>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Other Services</h3>
+                        <ul class="services-links">
+                            <% allServices.forEach(function(s) { %>
+                                <% if (s.id !== service.id) { %>
+                            <li><a href="/services/<%= s.slug %>"><%= s.name %></a></li>
+                                <% } %>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>
+
+    <!-- JavaScript -->
+    <script src="/js/script.js"></script>
+</body>
+</html>

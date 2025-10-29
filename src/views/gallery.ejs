@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Browse our gallery of artificial turf installations in Austin, TX. See our residential, commercial, pet turf, pool, sports turf, and paver projects.">
+    <meta name="keywords" content="artificial turf gallery Austin, turf installation photos, Hello Turf portfolio">
+    <meta name="author" content="Hello Turf">
+    
+    <!-- SEO Title -->
+    <title>Gallery - Our Work | Hello Turf Austin</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo/hello-turf-dark.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    <!-- Gallery Specific Styles -->
+    <style>
+        .gallery-page {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f0f8 100%);
+            min-height: 100vh;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .gallery-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gallery-header p {
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Pinterest-style Masonry Grid */
+        .masonry-grid {
+            column-count: 4;
+            column-gap: 20px;
+            padding: 0 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-item-overlay h3 {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gallery-item-overlay p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .gallery-item-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0, 102, 204, 0.95);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 2;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+
+            .gallery-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .gallery-header p {
+                font-size: 1.1rem;
+            }
+
+            .lightbox-nav {
+                font-size: 50px;
+                width: 60px;
+                height: 60px;
+                padding: 15px;
+            }
+
+            .lightbox-prev {
+                left: 20px;
+            }
+
+            .lightbox-next {
+                right: 20px;
+            }
+
+            .lightbox-content {
+                max-width: 95%;
+                max-height: 80vh;
+            }
+
+            .lightbox-content img {
+                max-height: 80vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .masonry-grid {
+                column-count: 1;
+                padding: 0 15px;
+            }
+
+            .gallery-header h1 {
+                font-size: 2rem;
+            }
+
+            .lightbox-nav {
+                font-size: 40px;
+                width: 50px;
+                height: 50px;
+                padding: 10px;
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+
+            .lightbox-content {
+                max-width: 95%;
+                max-height: 75vh;
+            }
+
+            .lightbox-content img {
+                max-height: 75vh;
+            }
+
+            .lightbox-info {
+                bottom: -80px;
+            }
+
+            .lightbox-info h3 {
+                font-size: 1.1rem;
+            }
+
+            .lightbox-info p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 85vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            width: auto;
+            height: auto;
+            border-radius: 10px;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.2);
+        }
+
+        .lightbox-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 60px;
+            cursor: pointer;
+            padding: 20px;
+            transition: all 0.3s ease;
+            user-select: none;
+            z-index: 10000;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-prev {
+            left: 50px;
+        }
+
+        .lightbox-next {
+            right: 50px;
+        }
+
+        .lightbox-info {
+            position: absolute;
+            bottom: -60px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+        }
+
+        .lightbox-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .lightbox-info p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/nav', { currentPage: 'gallery' }) %>
+
+    <!-- Gallery Page -->
+    <section class="gallery-page">
+        <div class="container">
+            <div class="gallery-header">
+                <h1>Our Portfolio</h1>
+                <p>Explore our stunning artificial turf installations across Austin. From residential backyards to commercial spaces, see the quality and beauty we bring to every project.</p>
+            </div>
+
+            <!-- Masonry Gallery Grid -->
+            <div class="masonry-grid" id="galleryGrid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item" data-category="residential">
+                    <span class="gallery-item-category">Residential</span>
+                    <img src="/images/turf-1.jpg" alt="Residential Backyard Turf">
+                    <div class="gallery-item-overlay">
+                        <h3>Beautiful Backyard Transformation</h3>
+                        <p>Premium artificial turf installation</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item" data-category="pet">
+                    <span class="gallery-item-category">Pet Turf</span>
+                    <img src="/images/turf-2.jpg" alt="Pet-Friendly Turf">
+                    <div class="gallery-item-overlay">
+                        <h3>Pet-Friendly Paradise</h3>
+                        <p>Durable and easy-to-clean turf</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item" data-category="commercial">
+                    <span class="gallery-item-category">Commercial</span>
+                    <img src="/images/turf-3.jpg" alt="Commercial Turf Installation">
+                    <div class="gallery-item-overlay">
+                        <h3>Modern Office Landscape</h3>
+                        <p>Professional commercial installation</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item" data-category="pool">
+                    <span class="gallery-item-category">Pool & Spa</span>
+                    <img src="/images/turf-4.jpg" alt="Pool Area Turf">
+                    <div class="gallery-item-overlay">
+                        <h3>Luxurious Pool Deck</h3>
+                        <p>Slip-resistant pool turf</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item" data-category="residential">
+                    <span class="gallery-item-category">Residential</span>
+                    <img src="/images/turf-5.jpg" alt="Front Yard Turf">
+                    <div class="gallery-item-overlay">
+                        <h3>Stunning Curb Appeal</h3>
+                        <p>Front yard artificial grass</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item" data-category="putting">
+                    <span class="gallery-item-category">Putting Greens</span>
+                    <img src="/images/turf-6.jpg" alt="Custom Putting Green">
+                    <div class="gallery-item-overlay">
+                        <h3>Backyard Putting Green</h3>
+                        <p>Professional-grade golf turf</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item" data-category="sports">
+                    <span class="gallery-item-category">Sports & Recreation</span>
+                    <img src="/images/turf-7.jpg" alt="Sports Field Turf">
+                    <div class="gallery-item-overlay">
+                        <h3>Athletic Field Installation</h3>
+                        <p>High-performance sports turf</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item" data-category="pavers">
+                    <span class="gallery-item-category">Pavers</span>
+                    <img src="/images/turf-8.jpg" alt="Turf and Pavers">
+                    <div class="gallery-item-overlay">
+                        <h3>Turf & Paver Combo</h3>
+                        <p>Beautiful hardscape integration</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9 -->
+                <div class="gallery-item" data-category="residential">
+                    <span class="gallery-item-category">Residential</span>
+                    <img src="/images/turf-9.jpg" alt="Small Yard Turf">
+                    <div class="gallery-item-overlay">
+                        <h3>Compact Yard Solution</h3>
+                        <p>Perfect for small spaces</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 10 -->
+                <div class="gallery-item" data-category="commercial">
+                    <span class="gallery-item-category">Commercial</span>
+                    <img src="/images/turf-10.jpg" alt="Commercial Property">
+                    <div class="gallery-item-overlay">
+                        <h3>Corporate Campus</h3>
+                        <p>Large-scale commercial project</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 11 -->
+                <div class="gallery-item" data-category="pet">
+                    <span class="gallery-item-category">Pet Turf</span>
+                    <img src="/images/turf-11.jpg" alt="Dog Run Area">
+                    <div class="gallery-item-overlay">
+                        <h3>Dog Run & Play Area</h3>
+                        <p>Safe and comfortable for pets</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 12 -->
+                <div class="gallery-item" data-category="pool">
+                    <span class="gallery-item-category">Pool & Spa</span>
+                    <img src="/images/turf-12.jpg" alt="Pool Surroundings">
+                    <div class="gallery-item-overlay">
+                        <h3>Resort-Style Pool Area</h3>
+                        <p>Elegant poolside landscape</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-nav lightbox-prev" id="lightboxPrev">&#8249;</span>
+        <span class="lightbox-nav lightbox-next" id="lightboxNext">&#8250;</span>
+        <div class="lightbox-content">
+            <span class="lightbox-close" id="lightboxClose">&times;</span>
+            <img src="" alt="Gallery Image" id="lightboxImg">
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>
+
+    <!-- JavaScript -->
+    <script src="/js/script.js"></script>
+    <script>
+        // Lightbox Functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        const lightboxDescription = document.getElementById('lightboxDescription');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        let currentIndex = 0;
+
+        // Open lightbox when clicking on gallery item
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                currentIndex = index;
+                showLightbox(item);
+            });
+        });
+
+        function showLightbox(item) {
+            const img = item.querySelector('img');
+            const title = item.querySelector('.gallery-item-overlay h3')?.textContent || '';
+            const description = item.querySelector('.gallery-item-overlay p')?.textContent || '';
+
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightboxTitle.textContent = title;
+            lightboxDescription.textContent = description;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close lightbox
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Navigate lightbox
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            showLightbox(galleryItems[currentIndex]);
+        });
+
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            showLightbox(galleryItems[currentIndex]);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+                showLightbox(galleryItems[currentIndex]);
+            } else if (e.key === 'ArrowRight') {
+                currentIndex = (currentIndex + 1) % galleryItems.length;
+                showLightbox(galleryItems[currentIndex]);
+            }
+        });
+    </script>
+</body>
+</html>
