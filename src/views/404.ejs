@@ -1,8 +1,9 @@
 <%- include('partials/header', {
-    title: title
+    title: title,
+    basePath: './'
 }) %>
 
-<%- include('partials/nav', { currentPage: '' }) %>
+<%- include('partials/nav', { currentPage: '', basePath: './' }) %>
 
 <!-- 404 Section -->
 <section class="hero" style="min-height: 70vh; margin-top: 80px;">
@@ -22,5 +23,5 @@
     </div>
 </section>
 
-<%- include('partials/footer') %>
+<%- include('partials/footer', { basePath: './' }) %>
 

@@ -2,10 +2,11 @@
     title: 'Hello Turf | Austin\'s Artificial Turf Specialists | Free Quote', 
     includeSplide: true, 
     includeP5: true,
-    description: 'Hello Turf - Austin\'s premier artificial turf installation specialists. Professional synthetic grass for residential, commercial, pet areas, and putting greens. Free quote available.'
+    description: 'Hello Turf - Austin\'s premier artificial turf installation specialists. Professional synthetic grass for residential, commercial, pet areas, and putting greens. Free quote available.',
+    basePath: './'
 }) %>
 
-<%- include('partials/nav', { currentPage: currentPage }) %>
+<%- include('partials/nav', { currentPage: currentPage, basePath: './' }) %>
 
 <!-- Hero Section -->
 <section id="home" class="hero">
@@ -421,4 +422,4 @@
 </section>
 
 
-<%- include('partials/footer', { includeSplide: true, includeHeroAnimation: true }) %>
+<%- include('partials/footer', { includeSplide: true, includeHeroAnimation: true, basePath: './' }) %>

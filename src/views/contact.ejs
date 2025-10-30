@@ -1,9 +1,10 @@
 <%- include('partials/header', {
     title: title,
-    description: 'Contact Hello Turf for a free quote on artificial turf installation in Austin, TX. Professional service, same-day response, and free consultations.'
+    description: 'Contact Hello Turf for a free quote on artificial turf installation in Austin, TX. Professional service, same-day response, and free consultations.',
+    basePath: './'
 }) %>
 
-<%- include('partials/nav', { currentPage: currentPage }) %>
+<%- include('partials/nav', { currentPage: currentPage, basePath: './' }) %>
 
 <!-- Contact & Quote Section -->
 <section id="contact" class="contact-quote-section" style="margin-top: 80px;">
@@ -121,5 +122,5 @@
     </div>
 </section>
 
-<%- include('partials/footer') %>
+<%- include('partials/footer', { basePath: './' }) %>
 

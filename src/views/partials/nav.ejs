@@ -1,31 +1,32 @@
+<% var base = typeof basePath !== 'undefined' ? basePath : './'; %>
 <!-- Navigation -->
 <nav class="navbar">
     <div class="container">
         <div class="nav-wrapper">
             <div class="logo">
-                <a href="./">
-                    <img src="./images/logo/hello-turf-light.png" alt="Hello Turf Logo" class="logo-img">
+                <a href="<%= base %>">
+                    <img src="<%= base %>images/logo/hello-turf-light.png" alt="Hello Turf Logo" class="logo-img">
                 </a>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="./#home" class="<%= currentPage === 'home' ? 'active' : '' %>">Home</a></li>
-                <li><a href="./#about">About</a></li>
+                <li><a href="<%= base %>#home" class="<%= currentPage === 'home' ? 'active' : '' %>">Home</a></li>
+                <li><a href="<%= base %>#about">About</a></li>
                 <li class="dropdown">
-                    <a href="./#services" class="<%= currentPage === 'services' ? 'active' : '' %>">Services <i class="fas fa-chevron-down"></i></a>
+                    <a href="<%= base %>#services" class="<%= currentPage === 'services' ? 'active' : '' %>">Services <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="./services/residential-turf">Residential Turf</a></li>
-                        <li><a href="./services/commercial-turf">Commercial Turf</a></li>
-                        <li><a href="./services/putting-greens">Putting Greens</a></li>
-                        <li><a href="./services/pet-turf">Pet Turf</a></li>
-                        <li><a href="./services/pool-turf">Pool Turf</a></li>
-                        <li><a href="./services/sports-turf">Sports Turf</a></li>
-                        <li><a href="./services/pavers">Pavers</a></li>
+                        <li><a href="<%= base %>services/residential-turf">Residential Turf</a></li>
+                        <li><a href="<%= base %>services/commercial-turf">Commercial Turf</a></li>
+                        <li><a href="<%= base %>services/putting-greens">Putting Greens</a></li>
+                        <li><a href="<%= base %>services/pet-turf">Pet Turf</a></li>
+                        <li><a href="<%= base %>services/pool-turf">Pool Turf</a></li>
+                        <li><a href="<%= base %>services/sports-turf">Sports Turf</a></li>
+                        <li><a href="<%= base %>services/pavers">Pavers</a></li>
                     </ul>
                 </li>
-                <li><a href="./gallery" class="<%= currentPage === 'gallery' ? 'active' : '' %>">Gallery</a></li>
-                <li><a href="./#testimonials">Testimonials</a></li>
-                <li><a href="./contact" class="<%= currentPage === 'contact' ? 'active' : '' %>">Contact</a></li>
-                <li><a href="./contact" class="nav-cta">Get Free Quote</a></li>
+                <li><a href="<%= base %>gallery" class="<%= currentPage === 'gallery' ? 'active' : '' %>">Gallery</a></li>
+                <li><a href="<%= base %>#testimonials">Testimonials</a></li>
+                <li><a href="<%= base %>contact" class="<%= currentPage === 'contact' ? 'active' : '' %>">Contact</a></li>
+                <li><a href="<%= base %>contact" class="nav-cta">Get Free Quote</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>

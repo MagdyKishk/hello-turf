@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <%- include('partials/nav', { currentPage: currentPage }) %>
+    <%- include('partials/nav', { currentPage: currentPage, basePath: '../' }) %>
 
     <!-- Service Hero -->
     <section class="service-hero" style="margin-top: 80px; background: linear-gradient(135deg, rgba(0, 102, 204, 0.9) 0%, rgba(46, 204, 113, 0.8) 100%), url('../images/<%= service.heroImage %>') center/cover;">
@@ -113,7 +113,7 @@
         </div>
     </section>
 
-    <%- include('partials/footer') %>
+    <%- include('partials/footer', { basePath: '../' }) %>
 
     <!-- JavaScript -->
     <script src="../js/script.js"></script>

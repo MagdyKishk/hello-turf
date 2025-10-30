@@ -13,7 +13,7 @@
     <title><%= title %></title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./images/logo/hello-turf-dark.png">
+    <link rel="icon" type="image/png" href="<%= typeof basePath !== 'undefined' ? basePath : './' %>images/logo/hello-turf-dark.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,7 @@
     <% } %>
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="<%= typeof basePath !== 'undefined' ? basePath : './' %>css/styles.css">
 </head>
 <body>
 
