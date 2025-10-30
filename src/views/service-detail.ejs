@@ -13,7 +13,7 @@
     <title><%= title %></title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./images/logo/hello-turf-dark.png">
+    <link rel="icon" type="image/png" href="../images/logo/hello-turf-dark.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,18 +24,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <%- include('partials/nav', { currentPage: currentPage }) %>
 
     <!-- Service Hero -->
-    <section class="service-hero" style="margin-top: 80px; background: linear-gradient(135deg, rgba(0, 102, 204, 0.9) 0%, rgba(46, 204, 113, 0.8) 100%), url('./images/<%= service.heroImage %>') center/cover;">
+    <section class="service-hero" style="margin-top: 80px; background: linear-gradient(135deg, rgba(0, 102, 204, 0.9) 0%, rgba(46, 204, 113, 0.8) 100%), url('../images/<%= service.heroImage %>') center/cover;">
         <div class="container">
             <div class="service-hero-content">
                 <h1><%= service.heroTitle %></h1>
                 <p><%= service.heroSubtitle %></p>
-                <a href="./contact" class="btn btn-primary">Get Free Quote</a>
+                <a href="../contact" class="btn btn-primary">Get Free Quote</a>
             </div>
         </div>
     </section>
@@ -76,7 +76,7 @@
                     <div class="cta-box">
                         <h3><%= service.ctaTitle %></h3>
                         <p><%= service.ctaDescription %></p>
-                        <a href="./contact" class="btn btn-primary"><%= service.ctaButton %></a>
+                        <a href="../contact" class="btn btn-primary"><%= service.ctaButton %></a>
                     </div>
                 </div>
 
@@ -95,7 +95,7 @@
                         <h3>Get Started Today</h3>
                         <p>Call us for a free consultation</p>
                         <a href="tel:+15123175400" class="btn btn-secondary"><i class="fas fa-phone"></i> (512) 317-5400</a>
-                        <a href="./contact" class="btn btn-primary">Request Quote</a>
+                        <a href="../contact" class="btn btn-primary">Request Quote</a>
                     </div>
 
                     <div class="sidebar-card">
@@ -103,7 +103,7 @@
                         <ul class="services-links">
                             <% allServices.forEach(function(s) { %>
                                 <% if (s.id !== service.id) { %>
-                            <li><a href="./services/<%= s.slug %>"><%= s.name %></a></li>
+                            <li><a href="../services/<%= s.slug %>"><%= s.name %></a></li>
                                 <% } %>
                             <% }); %>
                         </ul>
@@ -116,6 +116,6 @@
     <%- include('partials/footer') %>
 
     <!-- JavaScript -->
-    <script src="./js/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
