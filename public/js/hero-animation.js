@@ -32,9 +32,6 @@ function draw() {
     // Add subtle overlay gradient for better text readability
     drawGradientOverlay();
     
-    // Animated grid pattern
-    drawGridPattern();
-    
     // Update and display particles
     for (let particle of particles) {
         particle.update();
@@ -54,23 +51,6 @@ function drawGradientOverlay() {
     
     drawingContext.fillStyle = gradient;
     drawingContext.fillRect(0, 0, width, height);
-}
-
-function drawGridPattern() {
-    // Subtle animated grid
-    stroke(255, 255, 255, 15);
-    strokeWeight(1);
-    noFill();
-    
-    let gridSize = 50;
-    let offset = (frameCount * 0.5) % gridSize;
-    
-    for (let x = -offset; x < width + gridSize; x += gridSize) {
-        line(x, 0, x, height);
-    }
-    for (let y = -offset; y < height + gridSize; y += gridSize) {
-        line(0, y, width, y);
-    }
 }
 
 function drawFloatingElements() {

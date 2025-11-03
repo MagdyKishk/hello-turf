@@ -72,11 +72,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // === Scroll to Top Button ===
     const scrollTopBtn = document.getElementById('scrollTopBtn');
     
+    // === Fixed Social Media Widget with Footer Detection ===
+    const fixedSocial = document.getElementById('fixedSocial');
+    const footer = document.querySelector('.footer');
+    
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
             scrollTopBtn.classList.add('visible');
+            // Shift social buttons up when scroll button is visible
+            if (fixedSocial) {
+                fixedSocial.classList.add('shift-up');
+            }
         } else {
             scrollTopBtn.classList.remove('visible');
+            // Remove shift when scroll button is hidden
+            if (fixedSocial) {
+                fixedSocial.classList.remove('shift-up');
+            }
         }
         
         // Add shadow to navbar on scroll
@@ -85,6 +97,19 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
         } else {
             navbar.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+        }
+        
+        // Hide fixed social widget when footer is visible
+        if (fixedSocial && footer) {
+            const footerRect = footer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // If footer is visible in viewport (with a buffer of 100px)
+            if (footerRect.top < windowHeight - 100) {
+                fixedSocial.classList.add('hidden');
+            } else {
+                fixedSocial.classList.remove('hidden');
+            }
         }
     });
     
