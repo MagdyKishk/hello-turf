@@ -26,17 +26,21 @@ const createTransporter = () => {
  * @param {string} options.subject - Email subject
  * @param {string} options.html - Email HTML content
  * @param {string} options.text - Email plain text content
+ * @param {string} options.priority - Email priority (high, normal, low)
+ * @param {Object} options.headers - Additional email headers
  */
 const sendEmail = async (options) => {
     try {
         const transporter = createTransporter();
 
         const mailOptions = {
-            from: process.env.EMAIL_FROM || 'Hello Turf <hello@hello-turf.com>',
+            from: process.env.EMAIL_FROM,
             to: options.to || process.env.EMAIL_TO,
             subject: options.subject,
             text: options.text,
-            html: options.html
+            html: options.html,
+            priority: options.priority || 'normal',
+            headers: options.headers || {}
         };
 
         const info = await transporter.sendMail(mailOptions);

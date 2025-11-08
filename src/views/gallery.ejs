@@ -54,18 +54,17 @@
             margin: 0 auto;
         }
 
-        /* Pinterest-style Masonry Grid */
+        /* Grid Layout */
         .masonry-grid {
-            column-count: 4;
-            column-gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
             padding: 0 20px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
         .gallery-item {
-            break-inside: avoid;
-            margin-bottom: 20px;
             position: relative;
             overflow: hidden;
             border-radius: 15px;
@@ -82,6 +81,8 @@
 
         .gallery-item img {
             width: 100%;
+            height: 300px;
+            object-fit: cover;
             display: block;
             border-radius: 15px;
             transition: transform 0.3s ease;
@@ -137,13 +138,13 @@
         /* Responsive Design */
         @media (max-width: 1200px) {
             .masonry-grid {
-                column-count: 3;
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
         @media (max-width: 768px) {
             .masonry-grid {
-                column-count: 2;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .gallery-header h1 {
@@ -181,8 +182,12 @@
 
         @media (max-width: 480px) {
             .masonry-grid {
-                column-count: 1;
+                grid-template-columns: 1fr;
                 padding: 0 15px;
+            }
+            
+            .gallery-item img {
+                height: 250px;
             }
 
             .gallery-header h1 {
@@ -342,125 +347,180 @@
 
             <!-- Masonry Gallery Grid -->
             <div class="masonry-grid" id="galleryGrid">
-                <!-- Gallery Item 1 -->
+                <!-- Backyard Oasis -->
                 <div class="gallery-item" data-category="residential">
                     <span class="gallery-item-category">Residential</span>
-                    <img src="./images/turf-1.jpg" alt="Residential Backyard Turf">
+                    <img src="./images/gallery/Backyard Oasis.jpg" alt="Backyard Oasis">
                     <div class="gallery-item-overlay">
-                        <h3>Beautiful Backyard Transformation</h3>
-                        <p>Premium artificial turf installation</p>
+                        <h3>Backyard Oasis</h3>
+                        <p>Luxurious residential turf installation</p>
                     </div>
                 </div>
 
-                <!-- Gallery Item 2 -->
-                <div class="gallery-item" data-category="pet">
-                    <span class="gallery-item-category">Pet Turf</span>
-                    <img src="./images/turf-2.jpg" alt="Pet-Friendly Turf">
-                    <div class="gallery-item-overlay">
-                        <h3>Pet-Friendly Paradise</h3>
-                        <p>Durable and easy-to-clean turf</p>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 3 -->
-                <div class="gallery-item" data-category="commercial">
-                    <span class="gallery-item-category">Commercial</span>
-                    <img src="./images/turf-3.jpg" alt="Commercial Turf Installation">
-                    <div class="gallery-item-overlay">
-                        <h3>Modern Office Landscape</h3>
-                        <p>Professional commercial installation</p>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 4 -->
-                <div class="gallery-item" data-category="pool">
-                    <span class="gallery-item-category">Pool & Spa</span>
-                    <img src="./images/turf-4.jpg" alt="Pool Area Turf">
-                    <div class="gallery-item-overlay">
-                        <h3>Luxurious Pool Deck</h3>
-                        <p>Slip-resistant pool turf</p>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 5 -->
+                <!-- Curb Turf -->
                 <div class="gallery-item" data-category="residential">
                     <span class="gallery-item-category">Residential</span>
-                    <img src="./images/turf-5.jpg" alt="Front Yard Turf">
+                    <img src="./images/gallery/Curb Turf.jpg" alt="Curb Turf">
                     <div class="gallery-item-overlay">
-                        <h3>Stunning Curb Appeal</h3>
-                        <p>Front yard artificial grass</p>
+                        <h3>Curb Appeal Turf</h3>
+                        <p>Beautiful front yard transformation</p>
                     </div>
                 </div>
 
-                <!-- Gallery Item 6 -->
+                <!-- Entertainment Center -->
+                <div class="gallery-item" data-category="residential">
+                    <span class="gallery-item-category">Residential</span>
+                    <img src="./images/gallery/Entertainment Center.jpg" alt="Entertainment Center">
+                    <div class="gallery-item-overlay">
+                        <h3>Entertainment Center</h3>
+                        <p>Perfect outdoor living space</p>
+                    </div>
+                </div>
+
+                <!-- Front Yard -->
+                <div class="gallery-item" data-category="residential">
+                    <span class="gallery-item-category">Residential</span>
+                    <img src="./images/gallery/Front Yard.jpg" alt="Front Yard">
+                    <div class="gallery-item-overlay">
+                        <h3>Front Yard Elegance</h3>
+                        <p>Premium curb appeal installation</p>
+                    </div>
+                </div>
+
+                <!-- Golf Turf -->
                 <div class="gallery-item" data-category="putting">
                     <span class="gallery-item-category">Putting Greens</span>
-                    <img src="./images/turf-6.jpg" alt="Custom Putting Green">
+                    <img src="./images/gallery/Golf Turf.jpg" alt="Golf Turf">
                     <div class="gallery-item-overlay">
-                        <h3>Backyard Putting Green</h3>
-                        <p>Professional-grade golf turf</p>
+                        <h3>Custom Putting Green</h3>
+                        <p>Professional-grade golf surface</p>
                     </div>
                 </div>
 
-                <!-- Gallery Item 7 -->
-                <div class="gallery-item" data-category="sports">
-                    <span class="gallery-item-category">Sports & Recreation</span>
-                    <img src="./images/turf-7.jpg" alt="Sports Field Turf">
+                <!-- Golf Turf 2 -->
+                <div class="gallery-item" data-category="putting">
+                    <span class="gallery-item-category">Putting Greens</span>
+                    <img src="./images/gallery/Golf Turf 2.jpg" alt="Golf Turf 2">
                     <div class="gallery-item-overlay">
-                        <h3>Athletic Field Installation</h3>
-                        <p>High-performance sports turf</p>
+                        <h3>Backyard Golf Paradise</h3>
+                        <p>Practice your game at home</p>
                     </div>
                 </div>
 
-                <!-- Gallery Item 8 -->
-                <div class="gallery-item" data-category="pavers">
-                    <span class="gallery-item-category">Pavers</span>
-                    <img src="./images/turf-8.jpg" alt="Turf and Pavers">
-                    <div class="gallery-item-overlay">
-                        <h3>Turf & Paver Combo</h3>
-                        <p>Beautiful hardscape integration</p>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 9 -->
+                <!-- Intricate Design -->
                 <div class="gallery-item" data-category="residential">
                     <span class="gallery-item-category">Residential</span>
-                    <img src="./images/turf-9.jpg" alt="Small Yard Turf">
+                    <img src="./images/gallery/Intricate Design.jpg" alt="Intricate Design">
                     <div class="gallery-item-overlay">
-                        <h3>Compact Yard Solution</h3>
-                        <p>Perfect for small spaces</p>
+                        <h3>Intricate Design</h3>
+                        <p>Custom pattern and layout</p>
                     </div>
                 </div>
 
-                <!-- Gallery Item 10 -->
-                <div class="gallery-item" data-category="commercial">
-                    <span class="gallery-item-category">Commercial</span>
-                    <img src="./images/turf-10.jpg" alt="Commercial Property">
+                <!-- Kids Play Area -->
+                <div class="gallery-item" data-category="playground">
+                    <span class="gallery-item-category">Playground</span>
+                    <img src="./images/gallery/Kids Play Area.jpg" alt="Kids Play Area">
                     <div class="gallery-item-overlay">
-                        <h3>Corporate Campus</h3>
-                        <p>Large-scale commercial project</p>
+                        <h3>Kids Play Area</h3>
+                        <p>Safe and fun outdoor space</p>
                     </div>
                 </div>
 
-                <!-- Gallery Item 11 -->
+                <!-- Lake Living -->
+                <div class="gallery-item" data-category="residential">
+                    <span class="gallery-item-category">Residential</span>
+                    <img src="./images/gallery/Lake Living.jpg" alt="Lake Living">
+                    <div class="gallery-item-overlay">
+                        <h3>Lake Living</h3>
+                        <p>Waterfront property perfection</p>
+                    </div>
+                </div>
+
+                <!-- Linear Design -->
+                <div class="gallery-item" data-category="residential">
+                    <span class="gallery-item-category">Residential</span>
+                    <img src="./images/gallery/Linear Design.jpg" alt="Linear Design">
+                    <div class="gallery-item-overlay">
+                        <h3>Linear Design</h3>
+                        <p>Modern landscape architecture</p>
+                    </div>
+                </div>
+
+                <!-- Pet Turf -->
                 <div class="gallery-item" data-category="pet">
                     <span class="gallery-item-category">Pet Turf</span>
-                    <img src="./images/turf-11.jpg" alt="Dog Run Area">
+                    <img src="./images/gallery/Pet Turf.jpg" alt="Pet Turf">
                     <div class="gallery-item-overlay">
-                        <h3>Dog Run & Play Area</h3>
-                        <p>Safe and comfortable for pets</p>
+                        <h3>Pet-Friendly Turf</h3>
+                        <p>Durable and odor-resistant</p>
                     </div>
                 </div>
 
-                <!-- Gallery Item 12 -->
-                <div class="gallery-item" data-category="pool">
-                    <span class="gallery-item-category">Pool & Spa</span>
-                    <img src="./images/turf-12.jpg" alt="Pool Surroundings">
+                <!-- Pet Turf 3 -->
+                <div class="gallery-item" data-category="pet">
+                    <span class="gallery-item-category">Pet Turf</span>
+                    <img src="./images/gallery/Pet Turf 3.jpg" alt="Pet Turf 3">
                     <div class="gallery-item-overlay">
-                        <h3>Resort-Style Pool Area</h3>
-                        <p>Elegant poolside landscape</p>
+                        <h3>Pet Paradise</h3>
+                        <p>Safe and clean play area for pets</p>
                     </div>
                 </div>
+
+                <!-- Pool Deck -->
+                <div class="gallery-item" data-category="pool">
+                    <span class="gallery-item-category">Pool & Spa</span>
+                    <img src="./images/gallery/Pool Deck.jpg" alt="Pool Deck">
+                    <div class="gallery-item-overlay">
+                        <h3>Pool Deck Transformation</h3>
+                        <p>Cool and comfortable poolside turf</p>
+                    </div>
+                </div>
+
+                <!-- Pool Deck 2 -->
+                <div class="gallery-item" data-category="pool">
+                    <span class="gallery-item-category">Pool & Spa</span>
+                    <img src="./images/gallery/Pool Deck 2.jpg" alt="Pool Deck 2">
+                    <div class="gallery-item-overlay">
+                        <h3>Resort-Style Pool Deck</h3>
+                        <p>Luxury poolside installation</p>
+                    </div>
+                </div>
+
+                <!-- Pool Side -->
+                <div class="gallery-item" data-category="pool">
+                    <span class="gallery-item-category">Pool & Spa</span>
+                    <img src="./images/gallery/Pool Side.jpg" alt="Pool Side">
+                    <div class="gallery-item-overlay">
+                        <h3>Elegant Poolside</h3>
+                        <p>Beautiful pool area enhancement</p>
+                    </div>
+                </div>
+
+                <!-- Small Spaces -->
+                <div class="gallery-item" data-category="residential">
+                    <span class="gallery-item-category">Residential</span>
+                    <img src="./images/gallery/Small Spaces.jpg" alt="Small Spaces">
+                    <div class="gallery-item-overlay">
+                        <h3>Small Space Solution</h3>
+                        <p>Perfect for compact yards</p>
+                    </div>
+                </div>
+
+                <!-- Yard Turf -->
+                <div class="gallery-item" data-category="residential">
+                    <span class="gallery-item-category">Residential</span>
+                    <img src="./images/gallery/Yard Turf.jpg" alt="Yard Turf">
+                    <div class="gallery-item-overlay">
+                        <h3>Complete Yard Turf</h3>
+                        <p>Full yard artificial grass installation</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="gallery-cta" style="margin-top: 60px;">
+                <a href="./contact" class="btn btn-primary">Start Your Transformation</a>
             </div>
         </div>
     </section>

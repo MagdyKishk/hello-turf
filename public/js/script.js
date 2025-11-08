@@ -40,12 +40,56 @@ document.addEventListener('DOMContentLoaded', function() {
         navMenu.classList.toggle('active');
     });
     
-    // Close mobile menu when clicking on a link
+    // === Mobile Dropdown Toggle ===
+    const dropdowns = document.querySelectorAll('.nav-menu .dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const dropdownLink = dropdown.querySelector('a');
+        
+        dropdownLink.addEventListener('click', function(e) {
+            // Only prevent default and toggle on mobile
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                
+                // Close other dropdowns
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('active');
+            }
+        });
+    });
+    
+    // Close mobile menu when clicking on a link (except dropdown parent)
     const navLinks = document.querySelectorAll('.nav-menu li a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
+            // Don't close if it's a dropdown parent link
+            if (!this.parentElement.classList.contains('dropdown')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                
+                // Close all dropdowns
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+    });
+    
+    // Close dropdown when clicking dropdown items
+    const dropdownLinks = document.querySelectorAll('.dropdown-menu li a');
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', function() {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
         });
     });
     
@@ -284,12 +328,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function trackEvent(category, action, label) {
         // Integrate with Google Analytics, Facebook Pixel, etc.
         console.log('Event tracked:', category, action, label);
-        
-        // Example for Google Analytics 4:
-        // gtag('event', action, {
-        //     'event_category': category,
-        //     'event_label': label
-        // });
     }
     
     // Track CTA button clicks
@@ -317,6 +355,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // === Console Welcome Message ===
-console.log('%c👋 Welcome to Hello Turf!', 'color: #2ECC71; font-size: 20px; font-weight: bold;');
+console.log('%c👋 Welcome to %chello %cTURF%c!', 
+    'color: #2ECC71; font-size: 20px; font-weight: bold;',
+    'color: #0978b9; font-size: 20px; font-weight: bold;',
+    'color: #2ECC71; font-size: 20px; font-weight: bold;',
+    'color: #2ECC71; font-size: 20px; font-weight: bold;'
+);
 console.log('%cAustin\'s Artificial Turf Specialists', 'color: #0066CC; font-size: 14px;');
 
