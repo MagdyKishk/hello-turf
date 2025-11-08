@@ -163,7 +163,7 @@ exports.submitQuote = async (req, res) => {
                     <!-- Header -->
                     <tr>
                         <td style="background-color: #1A1A2E; padding: 40px 30px; text-align: center;">
-                            <img src="https://hello-turf.com/images/logo/hello-turf-light.png" alt="Hello Turf Logo" style="max-width: 200px; height: auto; margin-bottom: 20px;">
+                            <img src="https://hello-turf.com/images/logo/hello-turf-dark.png" alt="Hello Turf Logo" style="max-width: 200px; height: auto; margin-bottom: 20px;">
                             <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: 700; font-family: 'Poppins', sans-serif;">New Quote Request</h1>
                             <p style="color: rgba(255, 255, 255, 0.8); margin: 10px 0 0 0; font-size: 14px;">You have a new customer inquiry</p>
                         </td>
