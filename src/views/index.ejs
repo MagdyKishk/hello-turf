@@ -3,8 +3,72 @@
     includeSplide: true, 
     includeP5: true,
     description: 'Hello Turf - Austin\'s premier artificial turf installation specialists. Professional synthetic grass for residential, commercial, pet areas, and putting greens. Free quote available.',
-    basePath: './'
+    basePath: './',
+    canonical: 'https://hello-turf.com',
+    ogType: 'website',
+    ogUrl: 'https://hello-turf.com',
+    ogTitle: 'Hello Turf | Austin\'s Artificial Turf Specialists',
+    ogDescription: 'Hello Turf - Austin\'s premier artificial turf installation specialists. Professional synthetic grass for residential, commercial, pet areas, and putting greens. Free quote available.',
+    ogImage: 'https://hello-turf.com/images/logo/hello-turf-dark.png',
+    twitterUrl: 'https://hello-turf.com',
+    twitterTitle: 'Hello Turf | Austin\'s Artificial Turf Specialists',
+    twitterDescription: 'Hello Turf - Austin\'s premier artificial turf installation specialists. Professional synthetic grass for residential, commercial, pet areas, and putting greens.',
+    twitterImage: 'https://hello-turf.com/images/logo/hello-turf-dark.png'
 }) %>
+
+<!-- LocalBusiness Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Hello Turf",
+  "image": "https://hello-turf.com/images/logo/hello-turf-dark.png",
+  "telephone": "512-317-5400",
+  "email": "hello@hello-turf.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Austin",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "30.2672",
+    "longitude": "-97.7431"
+  },
+  "url": "https://hello-turf.com",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "08:00",
+    "closes": "18:00"
+  },
+  "priceRange": "$$",
+  "areaServed": {
+    "@type": "City",
+    "name": "Austin"
+  },
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "30.2672",
+      "longitude": "-97.7431"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "6"
+  }
+}
+</script>
 
 <%- include('partials/nav', { currentPage: currentPage, basePath: './' }) %>
 
@@ -16,6 +80,7 @@
         <div class="container">
             <div class="hero-text">
                 <img src="./images/logo/hello-turf-dark.png" alt="Hello Turf Logo" class="hero-logo">
+                <h1 class="hero-title">Austin's Premier Artificial Turf & Synthetic Grass Installer</h1>
                 <p class="hero-subtitle">Welcome to Hello Turf of Austin, Texas! We specialize in premium artificial turf paired with best-in-class installation. Say goodbye to mowing, watering, and endless upkeep and say hello to a lush, green lawn that looks flawless year-round.</p>
                 <div class="hero-cta">
                     <a href="./contact" class="btn btn-primary">Get a Free Quote</a>
@@ -361,6 +426,102 @@
             <h2 class="section-title">What Our Customers Say</h2>
             <p class="section-subtitle">Real Reviews from Real Austinites</p>
         </div>
+        
+        <!-- Review Schema Markup -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Hello Turf",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "6",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Sarah M."
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "hello TURF completely transformed our backyard! We went from a patchy, brown mess to a gorgeous green lawn that looks perfect year-round. No more mowing or watering – it's been a game changer. The team was professional, efficient, and the quality is outstanding."
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Mike & Jennifer R."
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "We have two large dogs and our natural grass couldn't handle it. The pet turf from hello TURF has been incredible – it drains perfectly, doesn't hold odors, and our dogs love it. The installation crew was fantastic and cleaned up everything. Highly recommend!"
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "David L."
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "As a golf enthusiast, I always wanted a putting green at home. hello TURF designed and installed an amazing custom green in my backyard. The quality is professional-grade and it's helped my short game tremendously. Best investment I've made!"
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Robert T."
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "We needed artificial turf for our commercial property and hello TURF delivered beyond expectations. The installation was quick, the crew was professional, and the result looks amazing. Our tenants love it and maintenance costs have dropped significantly."
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Amanda K."
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "From start to finish, hello TURF was exceptional. They provided a detailed quote, answered all our questions, and completed the installation in just two days. Our kids play on it daily and we haven't had a single issue. Worth every penny!"
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Carlos and Maria G."
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "Living in Austin, the water bills and drought restrictions made natural grass a challenge. hello TURF gave us the perfect solution. Our front and backyard look pristine, we've cut our water bill in half, and we love that it's eco-friendly. Couldn't be happier!"
+            }
+          ]
+        }
+        </script>
         
         <div class="splide testimonials-slider" id="testimonialsSlider">
             <div class="splide__track">

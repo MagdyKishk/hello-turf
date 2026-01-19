@@ -38,12 +38,28 @@ exports.getService = (req, res) => {
         }
 
         const allServices = getAllServices();
+        
+        // Create proper meta description (not truncated)
+        const metaDescription = service.introParagraph.length > 155 
+            ? service.introParagraph.substring(0, 152) + '...' 
+            : service.introParagraph;
 
         res.render('service-detail', {
             title: `${service.name} | Hello Turf`,
             currentPage: 'services',
             service: service,
-            allServices: allServices
+            allServices: allServices,
+            description: metaDescription,
+            canonical: `https://hello-turf.com/services/${service.slug}`,
+            ogType: 'website',
+            ogUrl: `https://hello-turf.com/services/${service.slug}`,
+            ogTitle: `${service.name} | Hello Turf`,
+            ogDescription: metaDescription,
+            ogImage: `https://hello-turf.com/images/${service.heroImage}`,
+            twitterUrl: `https://hello-turf.com/services/${service.slug}`,
+            twitterTitle: `${service.name} | Hello Turf`,
+            twitterDescription: metaDescription,
+            twitterImage: `https://hello-turf.com/images/${service.heroImage}`
         });
     } catch (error) {
         console.error('Error rendering service page:', error);

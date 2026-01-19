@@ -9,6 +9,25 @@
     <meta name="keywords" content="artificial turf Austin, synthetic grass Austin, turf installation Austin TX, artificial grass Austin, pet turf Austin, putting green installation">
     <meta name="author" content="Hello Turf">
     
+    <!-- Canonical URL -->
+    <link rel="canonical" href="<%= typeof canonical !== 'undefined' ? canonical : 'https://hello-turf.com' + (typeof basePath !== 'undefined' && basePath !== './' ? basePath.replace('./', '/') : '') %>">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="<%= typeof ogType !== 'undefined' ? ogType : 'website' %>">
+    <meta property="og:url" content="<%= typeof ogUrl !== 'undefined' ? ogUrl : 'https://hello-turf.com' + (typeof basePath !== 'undefined' && basePath !== './' ? basePath.replace('./', '/') : '') %>">
+    <meta property="og:title" content="<%= typeof ogTitle !== 'undefined' ? ogTitle : title %>">
+    <meta property="og:description" content="<%= typeof ogDescription !== 'undefined' ? ogDescription : (typeof description !== 'undefined' ? description : 'Hello Turf - Austin\'s premier artificial turf installation specialists. Professional synthetic grass for residential, commercial, pet areas, and putting greens.') %>">
+    <meta property="og:image" content="<%= typeof ogImage !== 'undefined' ? ogImage : 'https://hello-turf.com/images/logo/hello-turf-dark.png' %>">
+    <meta property="og:site_name" content="Hello Turf">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="<%= typeof twitterUrl !== 'undefined' ? twitterUrl : 'https://hello-turf.com' + (typeof basePath !== 'undefined' && basePath !== './' ? basePath.replace('./', '/') : '') %>">
+    <meta name="twitter:title" content="<%= typeof twitterTitle !== 'undefined' ? twitterTitle : title %>">
+    <meta name="twitter:description" content="<%= typeof twitterDescription !== 'undefined' ? twitterDescription : (typeof description !== 'undefined' ? description : 'Hello Turf - Austin\'s premier artificial turf installation specialists. Professional synthetic grass for residential, commercial, pet areas, and putting greens.') %>">
+    <meta name="twitter:image" content="<%= typeof twitterImage !== 'undefined' ? twitterImage : 'https://hello-turf.com/images/logo/hello-turf-dark.png' %>">
+    
     <!-- SEO Title -->
     <title><%= title %></title>
     

@@ -16,5 +16,14 @@ router.get('/gallery', pageController.getGallery);
 // Contact page
 router.get('/contact', pageController.getContact);
 
+// Privacy Policy page
+router.get('/privacy', pageController.getPrivacy);
+
+// Terms of Service page
+router.get('/terms', pageController.getTerms);
+
+// Sitemap
+router.get('/sitemap.xml', pageController.getSitemap);
+
 module.exports = router;
 

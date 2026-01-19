@@ -1,33 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include('partials/header', {
+    title: title,
+    description: typeof description !== 'undefined' ? description : (service.introParagraph.length > 155 ? service.introParagraph.substring(0, 152) + '...' : service.introParagraph),
+    canonical: typeof canonical !== 'undefined' ? canonical : `https://hello-turf.com/services/${service.slug}`,
+    ogType: typeof ogType !== 'undefined' ? ogType : 'website',
+    ogUrl: typeof ogUrl !== 'undefined' ? ogUrl : `https://hello-turf.com/services/${service.slug}`,
+    ogTitle: typeof ogTitle !== 'undefined' ? ogTitle : title,
+    ogDescription: typeof ogDescription !== 'undefined' ? ogDescription : (typeof description !== 'undefined' ? description : service.introParagraph),
+    ogImage: typeof ogImage !== 'undefined' ? ogImage : `https://hello-turf.com/images/${service.heroImage}`,
+    twitterUrl: typeof twitterUrl !== 'undefined' ? twitterUrl : `https://hello-turf.com/services/${service.slug}`,
+    twitterTitle: typeof twitterTitle !== 'undefined' ? twitterTitle : title,
+    twitterDescription: typeof twitterDescription !== 'undefined' ? twitterDescription : (typeof description !== 'undefined' ? description : service.introParagraph),
+    twitterImage: typeof twitterImage !== 'undefined' ? twitterImage : `https://hello-turf.com/images/${service.heroImage}`,
+    basePath: '../'
+}) %>
+
+<!-- Service Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "<%= service.name %>",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Hello Turf",
+    "telephone": "512-317-5400",
+    "email": "hello@hello-turf.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Austin",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Austin"
+  },
+  "description": "<%= service.introParagraph.replace(/"/g, '\\"') %>",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="<%= service.introParagraph.substring(0, 155) %>">
-    <meta name="keywords" content="<%= service.name.toLowerCase() %> Austin, artificial turf Austin TX">
-    <meta name="author" content="Hello Turf">
-    
-    <!-- SEO Title -->
-    <title><%= title %></title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../images/logo/hello-turf-dark.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="../css/styles.css">
-</head>
-<body>
-    <%- include('partials/nav', { currentPage: currentPage, basePath: '../' }) %>
 
     <!-- Service Hero -->
     <section class="service-hero" style="margin-top: 80px; background: linear-gradient(135deg, rgba(0, 102, 204, 0.9) 0%, rgba(46, 204, 113, 0.8) 100%), url('../images/<%= service.heroImage %>') <%= service.heroPosition || 'center' %>/cover;">

@@ -4,6 +4,7 @@
  */
 
 const { getAllServices } = require('../models/Service');
+const { getAllServices: getAllServicesData } = require('../models/ServiceData');
 
 // Home page
 exports.getHome = (req, res) => {
@@ -93,3 +94,81 @@ exports.getContact = (req, res) => {
     }
 };
 
+// Privacy Policy page
+exports.getPrivacy = (req, res) => {
+    try {
+        res.render('privacy', {
+            title: 'Privacy Policy | Hello Turf',
+            currentPage: 'privacy'
+        });
+    } catch (error) {
+        console.error('Error rendering privacy page:', error);
+        res.status(500).render('error', {
+            title: 'Error',
+            error: error,
+            message: 'Error loading privacy page'
+        });
+    }
+};
+
+// Terms of Service page
+exports.getTerms = (req, res) => {
+    try {
+        res.render('terms', {
+            title: 'Terms of Service | Hello Turf',
+            currentPage: 'terms'
+        });
+    } catch (error) {
+        console.error('Error rendering terms page:', error);
+        res.status(500).render('error', {
+            title: 'Error',
+            error: error,
+            message: 'Error loading terms page'
+        });
+    }
+};
+
+// Sitemap XML
+exports.getSitemap = (req, res) => {
+    try {
+        const baseUrl = 'https://hello-turf.com';
+        const services = getAllServicesData();
+        const currentDate = new Date().toISOString().split('T')[0];
+        
+        const urls = [
+            { loc: baseUrl, changefreq: 'weekly', priority: '1.0' },
+            { loc: `${baseUrl}/gallery`, changefreq: 'monthly', priority: '0.8' },
+            { loc: `${baseUrl}/contact`, changefreq: 'monthly', priority: '0.9' },
+            { loc: `${baseUrl}/privacy`, changefreq: 'yearly', priority: '0.3' },
+            { loc: `${baseUrl}/terms`, changefreq: 'yearly', priority: '0.3' }
+        ];
+        
+        // Add service pages
+        services.forEach(service => {
+            urls.push({
+                loc: `${baseUrl}/services/${service.slug}`,
+                changefreq: 'monthly',
+                priority: '0.8'
+            });
+        });
+        
+        res.set('Content-Type', 'text/xml');
+        let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';
+        sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+        
+        urls.forEach(url => {
+            sitemap += '  <url>\n';
+            sitemap += `    <loc>${url.loc}</loc>\n`;
+            sitemap += `    <lastmod>${currentDate}</lastmod>\n`;
+            sitemap += `    <changefreq>${url.changefreq}</changefreq>\n`;
+            sitemap += `    <priority>${url.priority}</priority>\n`;
+            sitemap += '  </url>\n';
+        });
+        
+        sitemap += '</urlset>';
+        res.send(sitemap);
+    } catch (error) {
+        console.error('Error generating sitemap:', error);
+        res.status(500).send('Error generating sitemap');
+    }
+};

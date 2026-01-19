@@ -1,30 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Browse our gallery of artificial turf installations in Austin, TX. See our residential, commercial, pet turf, pool, sports turf, and paver projects.">
-    <meta name="keywords" content="artificial turf gallery Austin, turf installation photos, Hello Turf portfolio">
-    <meta name="author" content="Hello Turf">
-    
-    <!-- SEO Title -->
-    <title>Gallery - Our Work | Hello Turf Austin</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./images/logo/hello-turf-dark.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="./css/styles.css">
+<%- include('partials/header', {
+    title: typeof title !== 'undefined' ? title : 'Our Work Gallery | Hello Turf',
+    description: typeof description !== 'undefined' ? description : 'View our portfolio of artificial turf installations in Austin, TX. See residential, commercial, pet turf, and putting green projects completed by Hello Turf.',
+    canonical: typeof canonical !== 'undefined' ? canonical : 'https://hello-turf.com/gallery',
+    ogType: 'website',
+    ogUrl: 'https://hello-turf.com/gallery',
+    ogTitle: 'Our Work Gallery | Hello Turf',
+    ogDescription: 'View our portfolio of artificial turf installations in Austin, TX. See residential, commercial, pet turf, and putting green projects completed by Hello Turf.',
+    ogImage: 'https://hello-turf.com/images/gallery/Backyard Oasis.jpg',
+    twitterUrl: 'https://hello-turf.com/gallery',
+    twitterTitle: 'Our Work Gallery | Hello Turf',
+    twitterDescription: 'View our portfolio of artificial turf installations in Austin, TX. See residential, commercial, pet turf, and putting green projects completed by Hello Turf.',
+    twitterImage: 'https://hello-turf.com/images/gallery/Backyard Oasis.jpg',
+    basePath: './'
+}) %>
     
     <!-- Gallery Specific Styles -->
     <style>

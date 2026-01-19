@@ -1,6 +1,16 @@
 <%- include('partials/header', {
     title: title,
-    description: 'Contact Hello Turf for a free quote on artificial turf installation in Austin, TX. Professional service, same-day response, and free consultations.',
+    description: typeof description !== 'undefined' ? description : 'Contact Hello Turf for a free quote on artificial turf installation in Austin, TX. Professional service, same-day response, and free consultations.',
+    canonical: typeof canonical !== 'undefined' ? canonical : 'https://hello-turf.com/contact',
+    ogType: 'website',
+    ogUrl: 'https://hello-turf.com/contact',
+    ogTitle: 'Contact Us - Get Free Quote | Hello Turf',
+    ogDescription: typeof description !== 'undefined' ? description : 'Contact Hello Turf for a free quote on artificial turf installation in Austin, TX. Professional service, same-day response, and free consultations.',
+    ogImage: 'https://hello-turf.com/images/logo/hello-turf-dark.png',
+    twitterUrl: 'https://hello-turf.com/contact',
+    twitterTitle: 'Contact Us - Get Free Quote | Hello Turf',
+    twitterDescription: typeof description !== 'undefined' ? description : 'Contact Hello Turf for a free quote on artificial turf installation in Austin, TX. Professional service, same-day response, and free consultations.',
+    twitterImage: 'https://hello-turf.com/images/logo/hello-turf-dark.png',
     basePath: './'
 }) %>
 
